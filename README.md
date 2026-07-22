@@ -543,4 +543,51 @@ From a defensive perspective, organizations should regularly review how their in
 
 Public infrastructure validation confirmed that GitLab's externally visible infrastructure is consistently represented across multiple independent passive intelligence platforms. Correlating Shodan and Censys with findings from WHOIS, DNS analysis, and passive subdomain enumeration strengthened confidence in the overall assessment and demonstrated the importance of validating intelligence through multiple publicly available sources.
 
-This phase concludes the technical portion of the passive open-source intelligence assessment and establishes a comprehensive understanding of GitLab's publicly observable Internet presence.
+This phase concludes the technical portion of the passive open-source intelligence assessment and establishes a comprehensive understanding of GitLab's publicly observable Internet presence. 
+
+--- 
+# Final Assessment
+
+## Executive Summary
+
+This passive open-source intelligence (OSINT) assessment examined GitLab's publicly observable Internet presence using only publicly available information. The assessment followed a structured methodology that combined organizational research, domain registration analysis, DNS enumeration, passive subdomain discovery, and public infrastructure validation to develop an evidence-based understanding of GitLab's external environment.
+
+Throughout the assessment, findings were validated across multiple independent passive intelligence sources to improve confidence and reduce reliance on any single dataset. At no point was active scanning, authentication, exploitation, or direct interaction with GitLab's infrastructure performed.
+
+---
+
+## Key Findings
+
+- GitLab publicly maintains organizational information through its official website, providing insight into leadership, governance, and corporate structure.
+
+- WHOIS records identified publicly available domain registration information, including the registrar, registration history, domain status, and authoritative name servers.
+
+- DNS analysis confirmed publicly advertised infrastructure, including IPv4 and IPv6 address records, authoritative name servers, mail exchange records, TXT records, and a published DMARC policy supporting email authentication.
+
+- Passive subdomain enumeration identified numerous GitLab-associated hostnames supporting documentation, APIs, package registries, monitoring services, analytics platforms, development environments, and operational infrastructure.
+
+- Public infrastructure validation using Shodan and Censys independently confirmed Internet-facing assets previously identified during DNS analysis and passive subdomain enumeration while providing additional metadata such as IP addresses, SSL/TLS certificates, HTTP services, and software fingerprints.
+
+---
+
+## Assessment Limitations
+
+This assessment was intentionally limited to passive reconnaissance techniques using publicly available information. No active scanning, authentication attempts, exploitation, vulnerability testing, social engineering, or interaction with GitLab's infrastructure was performed.
+
+As a result, this assessment cannot determine whether identified assets contain vulnerabilities, whether every publicly accessible asset was discovered, or whether all indexed information accurately reflects GitLab's current operational environment. Public intelligence platforms may also contain outdated or incomplete information depending on when the data was collected.
+
+---
+
+## Overall Analyst Assessment
+
+This assessment successfully established a comprehensive baseline of GitLab's publicly observable Internet presence through the correlation of multiple independent passive intelligence sources. Information collected during organizational research, WHOIS analysis, DNS enumeration, passive subdomain discovery, and public infrastructure validation consistently supported one another, increasing confidence in the overall findings.
+
+Rather than identifying security vulnerabilities, the assessment focused on understanding GitLab's externally visible infrastructure and demonstrating how publicly available information can be systematically collected, validated, and analyzed to build an accurate inventory of Internet-facing assets. This approach reflects how passive reconnaissance supports defensive security operations, threat intelligence, asset management, and incident response by providing organizations with greater visibility into their external attack surface.
+
+---
+
+## Conclusion
+
+This assessment demonstrated how passive open-source intelligence can be used to systematically identify, validate, and analyze an organization's publicly observable Internet presence without directly interacting with its infrastructure. By correlating evidence across GitLab's official website, WHOIS records, DNS analysis, passive subdomain enumeration, and Internet intelligence platforms, a comprehensive view of GitLab's external environment was developed using only publicly available information.
+
+The methodology applied throughout this project emphasizes evidence collection, validation across multiple independent sources, and objective analysis rather than simply gathering information. This structured approach reflects real-world security practices where accurate asset identification, analytical reasoning, and clear documentation are essential for understanding an organization's external exposure and supporting informed security decisions.
