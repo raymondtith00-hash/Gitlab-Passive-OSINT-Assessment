@@ -109,15 +109,15 @@ What publicly available domain registration information can be identified for Gi
 
 ### Why This Matters
 
-WHOIS records provide publicly available registration information that can help analysts validate domain ownership, identify the registrar, review important registration dates, and determine whether domain registration information is publicly available or protected through privacy services.
+WHOIS records provide publicly available registration information that helps analysts validate a domain's legitimacy, identify its registrar, review registration history, and determine the domain's current status. This information establishes a trusted baseline before investigating an organization's DNS infrastructure and other publicly accessible assets.
 
 ### Collection Method
 
-A WHOIS lookup was performed against GitLab's primary domain using the native `whois` utility in Kali Linux. The results were reviewed to identify publicly available registration information associated with the domain.
+A WHOIS lookup was performed against GitLab's primary domain (`gitlab.com`) using the native `whois` utility in Kali Linux. The output was reviewed to identify publicly available registration information associated with the domain.
 
 ### Evidence
 
-**Figure 4 – WHOIS Results for gitlab.com**
+**Figure 4 – WHOIS Results for `gitlab.com`**
 
 ![WHOIS Results](screenshots/04-gitlab-whois-results.png)
 
@@ -125,18 +125,22 @@ A WHOIS lookup was performed against GitLab's primary domain using the native `w
 
 | Observation | Result |
 |--------------|--------|
-| Domain | `gitlab.com` |
-| Registrar | *(Populate from WHOIS output)* |
-| Registration Date | *(Populate from WHOIS output)* |
-| Expiration Date | *(Populate from WHOIS output)* |
-| Name Servers | *(Populate from WHOIS output)* |
-| Registrant Information | *(Public, privacy protected, or redacted)* |
-| Domain Status | *(Populate from WHOIS output)* |
+| Domain Name | `gitlab.com` |
+| Registrar | Gandi SAS |
+| Registrar WHOIS Server | `whois.gandi.net` |
+| Creation Date | January 15, 2004 |
+| Last Updated | December 11, 2025 |
+| Registry Expiration Date | January 15, 2027 |
+| Domain Status | `clientTransferProhibited` |
+| Authoritative Name Servers | `DIVA.NS.CLOUDFLARE.COM`<br>`JERMAINE.NS.CLOUDFLARE.COM` |
+| DNSSEC | Unsigned |
 
 ### Analysis
 
-The WHOIS lookup provided publicly available registration information for GitLab's primary domain. The results were reviewed to verify domain ownership, identify the domain registrar, and examine registration metadata. Where information was unavailable or redacted, this was noted as part of the assessment.
+The WHOIS lookup identified GitLab's primary domain as being registered through **Gandi SAS** and showed that the domain has been registered since **2004**, indicating a long-established domain presence. The record also identified two authoritative Cloudflare name servers, suggesting that GitLab relies on Cloudflare to provide DNS services for the domain.
+
+The domain status is listed as **clientTransferProhibited**, which is a standard registration status used to help prevent unauthorized domain transfers. Additionally, the WHOIS record reports that DNSSEC is currently **unsigned**, which is recorded as part of the publicly available registration information.
 
 ### Analyst Assessment
 
-The WHOIS record provides foundational information that helps validate the legitimacy of GitLab's primary domain before conducting additional passive intelligence collection. Information obtained during this phase will be used to support subsequent analysis of DNS records, certificate transparency logs, and other publicly available infrastructure data.
+The WHOIS record provides a verified source of publicly available registration information that confirms key details about GitLab's primary domain. These findings establish a foundation for the next stage of the assessment, where the domain's DNS configuration and associated infrastructure will be examined through additional passive OSINT techniques.
