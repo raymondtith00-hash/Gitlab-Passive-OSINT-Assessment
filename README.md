@@ -48,5 +48,50 @@ Only passive collection techniques were used throughout this investigation. No a
 
 ### Intelligence Requirement
 
-The objective of this assessment is to identify publicly available information about GitLab that could be leveraged during the reconnaissance phase of a cyber attack. The investigation focuses on passive collection methods to understand GitLab's public-facing digital footprint and identify opportunities for defensive improvement.
+The objective of this assessment is to identify publicly available information about GitLab that could be leveraged during the reconnaissance phase of a cyber attack while demonstrating how passive OSINT techniques can help defenders understand and reduce an organization's public attack surface.
+
+Before collecting intelligence, the target organization must first be verified to ensure that all information gathered throughout the investigation can be accurately attributed to GitLab.
+
+--- 
+## Phase 2 – Target Identification
+
+### Intelligence Question
+
+How can GitLab's official digital presence be verified before collecting technical intelligence?
+
+### Collection Method
+
+GitLab's official company website, product documentation, security resources, and coordinated vulnerability disclosure page were reviewed using a web browser.
+
+Official GitLab-controlled sources were prioritized over third-party sources to establish a reliable baseline for the investigation.
+
+### Findings
+
+| Item | Confirmed Property | Confidence |
+|---|---|---|
+| Organization | GitLab | High |
+| Official company website | `about.gitlab.com` | High |
+| Primary service domain | `gitlab.com` | High |
+| Official documentation | `docs.gitlab.com` | High |
+| Official security resource | `about.gitlab.com/security/` | High |
+| Coordinated disclosure page | `about.gitlab.com/security/disclosure/` | High |
+
+### Evidence
+
+![GitLab Official Website](screenshots/01-gitlab-official-website.png)
+
+### Analysis
+
+The official GitLab website and related GitLab-controlled resources confirm the organization's primary digital properties.
+
+Establishing these verified properties creates a trusted baseline for the remainder of the investigation. Domains, certificates, infrastructure, and other assets discovered during later phases should be compared against these confirmed properties before being attributed to GitLab.
+
+This process reduces the possibility of incorrectly associating unrelated websites, third-party services, or impersonation domains with the organization.
+
+### Security Relevance
+
+An attacker may begin reconnaissance by identifying an organization's official domains, documentation, security resources, products, and public services. This information can help an attacker understand the organization's technology environment and create more believable social-engineering or impersonation attempts.
+
+Defenders can use the same information to maintain an accurate external asset inventory and identify websites or domains falsely claiming to represent the organization.
+
 
