@@ -111,13 +111,9 @@ GitLab maintains a comprehensive public-facing website that intentionally provid
 
 What publicly available domain registration information can be identified for GitLab's primary domain?
 
----
-
 ### Why This Matters
 
 WHOIS records provide publicly available registration information that helps analysts validate a domain's legitimacy and understand key aspects of its registration. Information such as the registrar, registration dates, domain status, and authoritative name servers establishes a foundation for investigating the domain's supporting infrastructure. Reviewing these records also helps ensure that subsequent DNS and infrastructure analysis is performed against the correct domain.
-
----
 
 ### Collection Method
 
