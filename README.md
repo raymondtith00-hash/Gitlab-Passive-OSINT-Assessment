@@ -42,4 +42,11 @@ Only passive collection techniques were used throughout this investigation. No a
 
 ---
 
-## Investigation
+# Investigation
+
+## Phase 1 - Planning and Direction
+
+### Intelligence Requirement
+
+The objective of this assessment is to identify publicly available information about GitLab that could be leveraged during the reconnaissance phase of a cyber attack. The investigation focuses on passive collection methods to understand GitLab's public-facing digital footprint and identify opportunities for defensive improvement.
+
