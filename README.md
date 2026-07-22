@@ -98,4 +98,4 @@ The Executive Leadership and Board of Directors pages provide publicly available
 
 ### Analyst Assessment
 
-GitLab maintains a comprehensive public-facing website that intentionally provides organizational and corporate information. From an OSINT perspective, these resources establish verified information about the company and its structure while illustrating the types of publicly available data that may be referenced during reconnaissance activities. No interaction with GitLab systems occurred during this phase; all information was obtained from official public web pages.
+GitLab maintains a comprehensive public-facing website that intentionally provides organizational and corporate information. From an OSINT perspective, these resources establish verified information about the company and its structure while illustrating the types of publicly available data that may be referenced during reconnaissance activities. All information was obtained from official public web pages.
