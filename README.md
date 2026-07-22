@@ -59,13 +59,22 @@ Before collecting intelligence, the target organization must first be verified t
 
 What publicly available organizational information can be identified through GitLab's official website?
 
+
+---
+
 ### Why This Matters
 
 An organization's official website is often the first source consulted during passive reconnaissance. Reviewing official resources helps establish a trusted starting point for an investigation while identifying information the organization intentionally makes available to customers, partners, investors, researchers, and the public.
 
+
+---
+
 ### Collection Method
 
 The official GitLab website (`about.gitlab.com`) was reviewed using Firefox on host Mac browser. The **Company** navigation menu was explored to identify publicly available organizational resources, including company information, leadership pages, investor relations, and other corporate resources.
+
+
+---
 
 ### Evidence
 
@@ -81,6 +90,9 @@ The official GitLab website (`about.gitlab.com`) was reviewed using Firefox on h
 
 ![GitLab Board of Directors](screenshots/03-gitlab-board-of-directors.png)
 
+
+---
+
 ### Findings
 
 | Observation | Result |
@@ -90,15 +102,24 @@ The official GitLab website (`about.gitlab.com`) was reviewed using Firefox on h
 | Executive Leadership | Executive leadership information is publicly available |
 | Corporate Governance | Board of Directors information is publicly available |
 
+
+---
+
 ### Why This Matters
 
 Before collecting technical information about an organization, it is important to verify that the investigation is focused on official resources. Reviewing an organization's public website establishes a trusted starting point, confirms the target's identity, and identifies information the organization intentionally makes available to the public. This provides context for the remainder of the assessment and reduces the risk of relying on unofficial or inaccurate sources.
+
+
+---
 
 ### Analysis
 
 Reviewing GitLab's official website identified several publicly accessible organizational resources. The **Company** navigation menu provides direct access to information about the organization's leadership, governance, investor relations, trust center, handbook, and other corporate resources.
 
 The Executive Leadership and Board of Directors pages provide publicly available information about GitLab's organizational structure, demonstrating a transparent corporate presence and establishing additional sources for passive intelligence collection.
+
+
+---
 
 ### Analyst Assessment
 
@@ -111,9 +132,15 @@ GitLab maintains a comprehensive public-facing website that intentionally provid
 
 What publicly available domain registration information can be identified for GitLab's primary domain?
 
+
+---
+
 ### Why This Matters
 
 WHOIS records provide publicly available registration information that helps analysts validate a domain's legitimacy and understand key aspects of its registration. Information such as the registrar, registration dates, domain status, and authoritative name servers establishes a foundation for investigating the domain's supporting infrastructure. Reviewing these records also helps ensure that subsequent DNS and infrastructure analysis is performed against the correct domain.
+
+
+---
 
 ### Collection Method
 
@@ -161,6 +188,9 @@ The WHOIS lookup confirmed publicly available registration information for GitLa
 The WHOIS record also identified two authoritative name servers associated with the domain. These observations establish an initial understanding of GitLab's publicly available DNS infrastructure before performing direct DNS record analysis.
 
 Additionally, the WHOIS record reports that DNSSEC is currently unsigned. This observation is documented as part of the publicly available registration information without drawing conclusions about the organization's security posture.
+
+
+---
 
 ### Analyst Assessment
 
@@ -216,7 +246,14 @@ The following DNS queries identified the IPv4 (`A`) and IPv6 (`AAAA`) address re
 
 ![IPv4 and IPv6 DNS Records](screenshots/05-gitlab-a-aaaa-records.png)
 
----
+**Key Observations**
+
+- The `A` record resolves `gitlab.com` to the IPv4 address `172.65.251.78`.
+- The `AAAA` record resolves `gitlab.com` to the IPv6 address `2606:4700:90:0:f22e:fbec:5bed:a9b9`.
+
+**Why This Evidence Matters**
+
+Identifying publicly advertised IP addresses establishes where the domain resolves on the Internet. These records provide a foundation for understanding the organization's external infrastructure and can later be correlated with certificate transparency logs and publicly indexed infrastructure identified through passive intelligence sources.
 
 #### Figure 6 – Name Server and Mail Exchange Records
 
@@ -224,13 +261,33 @@ The following DNS queries identified the authoritative name servers and mail exc
 
 ![Name Server and Mail Exchange Records](screenshots/06-gitlab-ns-mx-records.png)
 
+**Key Observations**
+
+- Two authoritative name servers were identified.
+- Five mail exchange records were published for the domain.
+- The authoritative name servers matched those identified during the WHOIS analysis.
+
+**Why This Evidence Matters**
+
+Authoritative name servers define which systems are responsible for the domain's DNS records, while MX records identify the infrastructure designated to receive email. Comparing these records with the WHOIS results also helps validate the consistency of publicly available registration and DNS information across multiple passive sources.
+
 ---
 
 #### Figure 7 – TXT DNS Records
 
-The following DNS query identified publicly available TXT records associated with `gitlab.com`, including domain verification records, email-related configuration, and other published DNS text records.
+The following DNS query identified publicly available TXT records associated with `gitlab.com`.
 
 ![TXT DNS Records](screenshots/07-gitlab-txt-records.png)
+
+**Key Observations**
+
+- Multiple TXT records were identified.
+- The records include SPF configuration.
+- Several TXT records are used for domain verification.
+
+**Why This Evidence Matters**
+
+TXT records often contain information related to email authentication and domain ownership verification. Reviewing these records helps analysts understand how an organization publishes configuration information that supports email security and integration with external services.
 
 ---
 
@@ -239,6 +296,16 @@ The following DNS query identified publicly available TXT records associated wit
 The following DNS query identified the published DMARC policy associated with `gitlab.com`.
 
 ![DMARC DNS Record](screenshots/08-gitlab-dmarc-record.png)
+
+**Key Observations**
+
+- A DMARC policy is published.
+- The policy is configured as `p=reject`.
+- Aggregate reporting is enabled.
+
+**Why This Evidence Matters**
+
+DMARC records describe how an organization requests that receiving mail servers handle messages that fail email authentication checks. Reviewing the published policy provides insight into publicly available email authentication practices and demonstrates whether the organization has implemented a domain-level policy to help reduce email spoofing.
 
 ---
 
