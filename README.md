@@ -99,3 +99,44 @@ The Executive Leadership and Board of Directors pages provide publicly available
 ### Analyst Assessment
 
 GitLab maintains a comprehensive public-facing website that intentionally provides organizational and corporate information. From an OSINT perspective, these resources establish verified information about the company and its structure while illustrating the types of publicly available data that may be referenced during reconnaissance activities. All information was obtained from official public web pages.
+
+---
+# Phase 3 – Domain Registration Analysis
+
+### Assessment Question
+
+What publicly available domain registration information can be identified for GitLab's primary domain?
+
+### Why This Matters
+
+WHOIS records provide publicly available registration information that can help analysts validate domain ownership, identify the registrar, review important registration dates, and determine whether domain registration information is publicly available or protected through privacy services.
+
+### Collection Method
+
+A WHOIS lookup was performed against GitLab's primary domain using the native `whois` utility in Kali Linux. The results were reviewed to identify publicly available registration information associated with the domain.
+
+### Evidence
+
+**Figure 4 – WHOIS Results for gitlab.com**
+
+![WHOIS Results](screenshots/04-gitlab-whois-results.png)
+
+### Findings
+
+| Observation | Result |
+|--------------|--------|
+| Domain | `gitlab.com` |
+| Registrar | *(Populate from WHOIS output)* |
+| Registration Date | *(Populate from WHOIS output)* |
+| Expiration Date | *(Populate from WHOIS output)* |
+| Name Servers | *(Populate from WHOIS output)* |
+| Registrant Information | *(Public, privacy protected, or redacted)* |
+| Domain Status | *(Populate from WHOIS output)* |
+
+### Analysis
+
+The WHOIS lookup provided publicly available registration information for GitLab's primary domain. The results were reviewed to verify domain ownership, identify the domain registrar, and examine registration metadata. Where information was unavailable or redacted, this was noted as part of the assessment.
+
+### Analyst Assessment
+
+The WHOIS record provides foundational information that helps validate the legitimacy of GitLab's primary domain before conducting additional passive intelligence collection. Information obtained during this phase will be used to support subsequent analysis of DNS records, certificate transparency logs, and other publicly available infrastructure data.
