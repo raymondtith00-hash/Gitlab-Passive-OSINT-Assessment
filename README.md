@@ -71,7 +71,7 @@ The official GitLab website (`about.gitlab.com`) was reviewed using Firefox on h
 
 **Figure 1 – GitLab Company Navigation**
 
-![GitLab Company Navigation](screenshots/01-gitlab-company-navigation.png)
+![GitLab Company Navigation](screenshots/01-gitlab-company-menu.png)
 
 **Figure 2 – GitLab Executive Leadership**
 
