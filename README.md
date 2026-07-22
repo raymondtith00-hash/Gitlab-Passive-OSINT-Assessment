@@ -46,7 +46,7 @@ Only passive collection techniques were used throughout this investigation. No a
 
 ## Phase 1 - Planning and Direction
 
-### Intelligence Requirement
+### Assessment Objective
 
 The objective of this assessment is to identify publicly available information about GitLab that could be leveraged during the reconnaissance phase of a cyber attack while demonstrating how passive OSINT techniques can help defenders understand and reduce an organization's public attack surface.
 
@@ -55,43 +55,41 @@ Before collecting intelligence, the target organization must first be verified t
 --- 
 ## Phase 2 – Target Identification
 
-### Intelligence Question
+### Assessment Question 
 
 How can GitLab's official digital presence be verified before collecting technical intelligence?
 
+### Why This Matters
+
+Before collecting technical intelligence, it is important to verify the target organization and its official digital properties. Establishing this baseline helps ensure that all information gathered throughout the investigation is accurately attributed to GitLab and reduces the risk of analyzing unrelated or impersonating assets.
+
 ### Collection Method
 
-GitLab's official company website, product documentation, security resources, and coordinated vulnerability disclosure page were reviewed using a web browser.
-
-Official GitLab-controlled sources were prioritized over third-party sources to establish a reliable baseline for the investigation.
-
-### Findings
-
-| Item | Confirmed Property | Confidence |
-|---|---|---|
-| Organization | GitLab | High |
-| Official company website | `about.gitlab.com` | High |
-| Primary service domain | `gitlab.com` | High |
-| Official documentation | `docs.gitlab.com` | High |
-| Official security resource | `about.gitlab.com/security/` | High |
-| Coordinated disclosure page | `about.gitlab.com/security/disclosure/` | High |
+The investigation began by reviewing GitLab's official website to identify the organization's primary services, official domains, and publicly available resources. Information collected during this phase will serve as the baseline for subsequent OSINT collection.
 
 ### Evidence
 
 ![GitLab Official Website](screenshots/01-gitlab-official-website.png)
 
+### Findings
+
+| Observation | Result |
+|--------------|--------|
+| Organization | GitLab |
+| Official Company Website | about.gitlab.com |
+| Primary Platform | gitlab.com |
+| Primary Service | DevSecOps Platform |
+| Official Documentation | docs.gitlab.com |
+| Official Security Resources | about.gitlab.com/security/ |
+
 ### Analysis
 
-The official GitLab website and related GitLab-controlled resources confirm the organization's primary digital properties.
+The official GitLab website confirmed the organization's identity and established trusted digital properties for the remainder of the assessment. Future findings, including WHOIS records, DNS information, certificate transparency logs, and infrastructure data, will be compared against these confirmed assets before being attributed to GitLab.
 
-Establishing these verified properties creates a trusted baseline for the remainder of the investigation. Domains, certificates, infrastructure, and other assets discovered during later phases should be compared against these confirmed properties before being attributed to GitLab.
+Establishing verified organizational assets is a fundamental step in OSINT investigations because it reduces attribution errors and provides a reliable foundation for intelligence collection.
 
-This process reduces the possibility of incorrectly associating unrelated websites, third-party services, or impersonation domains with the organization.
+### Analyst Assessment
 
-### Security Relevance
+Threat actors often begin reconnaissance by identifying an organization's official domains, products, documentation, and public services. This information helps attackers understand the target environment and may assist with phishing, social engineering, or infrastructure mapping.
 
-An attacker may begin reconnaissance by identifying an organization's official domains, documentation, security resources, products, and public services. This information can help an attacker understand the organization's technology environment and create more believable social-engineering or impersonation attempts.
-
-Defenders can use the same information to maintain an accurate external asset inventory and identify websites or domains falsely claiming to represent the organization.
-
-
+Defenders can use the same publicly available information to validate their external asset inventory and identify unauthorized domains or services that could be used for impersonation.
