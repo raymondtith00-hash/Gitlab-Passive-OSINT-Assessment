@@ -1,4 +1,8 @@
-# Passive Open-Source Intelligence Assessment of GitLab
+# Passive Open-Source Intelligence (OSINT) Assessment of GitLab
+
+> **Project Summary**
+>
+> This project documents a passive Open-Source Intelligence (OSINT) assessment of GitLab's publicly observable Internet presence. Using only publicly available information, the assessment identifies organizational assets, domain registration details, DNS infrastructure, publicly discoverable subdomains, and Internet-facing systems while demonstrating how passive reconnaissance supports security operations, threat intelligence, and external attack surface awareness.
 
 ## Project Overview
 
@@ -42,17 +46,83 @@ Only passive collection techniques were used throughout this investigation. No a
 
 ---
 
+# Methodology
+
+This assessment followed a structured passive reconnaissance methodology designed to collect, validate, and analyze publicly available information without interacting directly with GitLab's infrastructure.
+
+Information was gathered from official organizational resources, WHOIS records, public DNS data, passive subdomain enumeration, and Internet intelligence platforms. Each phase built upon the findings of the previous phase, allowing evidence to be validated across multiple independent sources and reducing reliance on any single dataset.
+
+Throughout the assessment, no authentication, exploitation, vulnerability testing, active scanning, or social engineering activities were performed. All observations are based solely on publicly accessible information available at the time of the investigation.
+
+---
+
 # Investigation
 
-## Phase 1 - Planning and Direction
+# Phase 1 – Planning and Direction
 
-### Assessment Objective
+## Assessment Question
 
-The objective of this assessment is to identify publicly available information about GitLab that could be leveraged during the reconnaissance phase of a cyber attack while demonstrating how passive OSINT techniques can help defenders understand and reduce an organization's public attack surface.
+How can a structured passive OSINT methodology be used to identify and validate GitLab's publicly observable Internet presence while maintaining a strictly passive approach?
 
-Before collecting intelligence, the target organization must first be verified to ensure that all information gathered throughout the investigation can be accurately attributed to GitLab.
+---
 
---- 
+## Why This Matters
+
+Before collecting intelligence, it is important to establish a clear objective, define the scope of the assessment, and identify appropriate collection methods. A structured methodology ensures that information is gathered consistently, remains attributable to the intended target, and can be validated throughout the investigation using multiple independent sources.
+
+Establishing these parameters also helps ensure the assessment remains ethical, repeatable, and limited to publicly available information.
+
+---
+
+## Collection Method
+
+Before collecting technical information, the assessment scope, objectives, and passive collection techniques were defined.
+
+The investigation was limited to publicly available information obtained from:
+
+- GitLab's official website
+- WHOIS records
+- Public DNS records
+- Passive subdomain enumeration
+- Internet intelligence platforms
+
+No active interaction with GitLab's infrastructure occurred during any phase of the assessment.
+
+---
+
+## Findings
+
+| Observation | Result |
+|--------------|--------|
+| Assessment Type | Passive Open-Source Intelligence (OSINT) |
+| Target Organization | GitLab |
+| Collection Approach | Passive reconnaissance only |
+| Active Interaction | None |
+| Intended Outcome | Develop an evidence-based understanding of GitLab's publicly observable Internet presence |
+
+---
+
+## Analysis
+
+Defining the scope and methodology before beginning reconnaissance establishes a structured foundation for the assessment. Limiting collection activities to passive intelligence sources ensures observations can be gathered without generating traffic toward the target while maintaining an ethical and repeatable investigation process.
+
+This methodology also supports evidence validation by allowing information collected during later phases to be compared across multiple independent public sources.
+
+---
+
+## Attacker Perspective
+
+Threat actors rarely begin an operation with exploitation. Instead, reconnaissance is used to understand the target, identify publicly available information, and build an inventory of Internet-facing assets before deciding whether additional activity is worthwhile.
+
+The same structured approach benefits defenders by providing visibility into the information that is publicly accessible about their organization and identifying opportunities to improve external asset awareness.
+
+---
+
+## Analyst Assessment
+
+A clearly defined methodology establishes the foundation for a reliable passive intelligence assessment. By limiting the investigation to publicly available information and validating findings throughout each phase, the assessment maintains both technical accuracy and ethical integrity while developing a comprehensive understanding of GitLab's publicly observable environment.
+
+---
 # Phase 2 – Target Identification
 
 ### Assessment Question
