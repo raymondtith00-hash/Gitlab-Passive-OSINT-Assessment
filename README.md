@@ -57,35 +57,45 @@ Before collecting intelligence, the target organization must first be verified t
 
 ### Assessment Question
 
-How can GitLab's official online presence be verified before collecting technical intelligence?
+What publicly available organizational information can be identified through GitLab's official website?
 
 ### Why This Matters
 
-Before collecting information about an organization, it is important to verify that the investigation is focused on official company resources. Establishing a trusted starting point reduces the risk of gathering information from unofficial or fraudulent sources and provides a reliable foundation for the remainder of the assessment.
+An organization's official website is often the first source consulted during passive reconnaissance. Reviewing official resources helps establish a trusted starting point for an investigation while identifying information the organization intentionally makes available to customers, partners, investors, researchers, and the public.
 
 ### Collection Method
 
-The official GitLab website was reviewed using a web browser in Kali Linux. The organization's publicly available homepage was examined to verify its identity and understand the primary service it provides.
+The official GitLab website (`about.gitlab.com`) was reviewed using Firefox on host Mac browser. The **Company** navigation menu was explored to identify publicly available organizational resources, including company information, leadership pages, investor relations, and other corporate resources.
 
 ### Evidence
 
-**Figure 1 – GitLab Official Website**
+**Figure 1 – GitLab Company Navigation**
 
-![GitLab Official Website](screenshots/01-gitlab-official-website.png)
+![GitLab Company Navigation](screenshots/01-gitlab-company-navigation.png)
+
+**Figure 2 – GitLab Executive Leadership**
+
+![GitLab Executive Leadership](screenshots/02-gitlab-executive-team.png)
+
+**Figure 3 – GitLab Board of Directors**
+
+![GitLab Board of Directors](screenshots/03-gitlab-board-of-directors.png)
 
 ### Findings
 
 | Observation | Result |
 |--------------|--------|
-| Organization | GitLab |
 | Official Website | `about.gitlab.com` |
-| Primary Product | GitLab Platform |
-| Primary Service | DevSecOps Platform |
+| Company Resources | Public access to company, careers, events, investor relations, trust center, handbook, and press resources |
+| Executive Leadership | Executive leadership information is publicly available |
+| Corporate Governance | Board of Directors information is publicly available |
 
 ### Analysis
 
-The official GitLab website confirms the organization's identity and establishes `about.gitlab.com` as an official company resource. The homepage identifies GitLab as a DevSecOps platform and provides a trusted starting point for collecting additional publicly available information throughout the assessment.
+Reviewing GitLab's official website identified several publicly accessible organizational resources. The **Company** navigation menu provides direct access to information about the organization's leadership, governance, investor relations, trust center, handbook, and other corporate resources.
+
+The Executive Leadership and Board of Directors pages provide publicly available information about GitLab's organizational structure, demonstrating a transparent corporate presence and establishing additional sources for passive intelligence collection.
 
 ### Analyst Assessment
 
-The official company website serves as the foundation for the remainder of the investigation. Verifying GitLab's official online presence ensures that future findings—including domain registration records, DNS information, certificate transparency logs, and other publicly available intelligence—can be confidently attributed to the correct organization.
+GitLab maintains a comprehensive public-facing website that intentionally provides organizational and corporate information. From an OSINT perspective, these resources establish verified information about the company and its structure while illustrating the types of publicly available data that may be referenced during reconnaissance activities. No interaction with GitLab systems occurred during this phase; all information was obtained from official public web pages.
