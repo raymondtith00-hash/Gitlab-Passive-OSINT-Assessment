@@ -121,40 +121,13 @@ A WHOIS lookup was performed against GitLab's primary domain (`gitlab.com`) usin
 
 ### Evidence
 
-**Figure 4 – WHOIS Results for `gitlab.com`**
-
-![WHOIS Results](screenshots/04-gitlab-whois-results.png)
-
-### Findings
-
-| Observation | Result |
-|--------------|--------|
-| Domain Name | `gitlab.com` |
-| Registrar | Gandi SAS |
-| Registrar WHOIS Server | `whois.gandi.net` |
-| Creation Date | January 15, 2004 |
-| Last Updated | December 11, 2025 |
-| Registry Expiration Date | January 15, 2027 |
-| Domain Status | `clientTransferProhibited` |
-| Authoritative Name Servers | `DIVA.NS.CLOUDFLARE.COM`<br>`JERMAINE.NS.CLOUDFLARE.COM` |
-| DNSSEC | Unsigned |
-
-### Analysis
-
-The WHOIS lookup identified GitLab's primary domain as being registered through **Gandi SAS** and showed that the domain has been registered since **2004**, indicating a long-established domain presence. The WHOIS record also identifies **Cloudflare authoritative name servers** associated with the domain, providing additional information about its publicly available DNS registration.
-
-The domain status is listed as **clientTransferProhibited**, a standard registration status intended to help prevent unauthorized domain transfers. Additionally, the WHOIS record reports that **DNSSEC is currently unsigned**, which was documented as part of the publicly available registration information.
-
-### Analyst Assessment
-
-The WHOIS record provides verified registration information that confirms key details about GitLab's primary domain. The identified registrar, registration timeline, domain status, and authoritative name servers establish a foundation for the next phase of the assessment, where GitLab's DNS configuration and infrastructure will be examined using additional passive OSINT techniques. 
-
---- 
 # Phase 4 – DNS Infrastructure Analysis
 
 ### Assessment Question
 
 What publicly available DNS information can be identified for GitLab's primary domain, and what does it reveal about the organization's publicly accessible infrastructure?
+
+---
 
 ### Why This Matters
 
@@ -164,31 +137,21 @@ DNS records provide insight into how an organization's domain supports publicly 
 
 ### Collection Method
 
-DNS records for `gitlab.com` were queried using the `dig` utility in Kali Linux. Publicly available record types were reviewed to identify information related to web services, authoritative name servers, email routing, and domain configuration.
+DNS records for `gitlab.com` were queried using the `dig` utility in Kali Linux.
 
-The following DNS queries were performed:
+The following passive DNS queries were performed:
 
 ```bash
 dig A gitlab.com
-```
 
-```bash
 dig AAAA gitlab.com
-```
 
-```bash
 dig NS gitlab.com
-```
 
-```bash
 dig MX gitlab.com
-```
 
-```bash
 dig TXT gitlab.com
-```
 
-```bash
 dig TXT _dmarc.gitlab.com
 ```
 
@@ -200,19 +163,33 @@ Only passive DNS queries were performed. No port scanning, service enumeration, 
 
 #### Figure 5 – IPv4 and IPv6 DNS Records
 
+The following DNS queries identified the IPv4 (`A`) and IPv6 (`AAAA`) address records currently published for `gitlab.com`.
+
 ![IPv4 and IPv6 DNS Records](screenshots/05-gitlab-a-aaaa-records.png)
 
 ---
 
 #### Figure 6 – Name Server and Mail Exchange Records
 
-![NS and MX Records](screenshots/06-gitlab-ns-mx-records.png)
+The following DNS queries identified the authoritative name servers and mail exchange (MX) records associated with `gitlab.com`.
+
+![Name Server and Mail Exchange Records](screenshots/06-gitlab-ns-mx-records.png)
 
 ---
 
-#### Figure 7 – TXT and DMARC Records
+#### Figure 7 – TXT DNS Records
 
-![TXT and DMARC Records](screenshots/07-gitlab-txt-dmarc-records.png)
+The following DNS query identified publicly available TXT records associated with `gitlab.com`, including domain verification records, email-related configuration, and other published DNS text records.
+
+![TXT DNS Records](screenshots/07-gitlab-txt-records.png)
+
+---
+
+#### Figure 8 – DMARC DNS Record
+
+The following DNS query identified the published DMARC policy associated with `gitlab.com`.
+
+![DMARC DNS Record](screenshots/08-gitlab-dmarc-record.png)
 
 ---
 
@@ -220,27 +197,31 @@ Only passive DNS queries were performed. No port scanning, service enumeration, 
 
 | Observation | Result |
 |--------------|--------|
-| IPv4 Address Records | *To be completed from evidence* |
-| IPv6 Address Records | *To be completed from evidence* |
-| Authoritative Name Servers | *To be completed from evidence* |
-| Mail Exchange Records | *To be completed from evidence* |
-| TXT Records | *To be completed from evidence* |
-| DMARC Policy | *To be completed from evidence* |
+| IPv4 Address Record | `172.65.251.78` |
+| IPv6 Address Record | `2606:4700:90:0:f22e:fbec:5bed:a9b9` |
+| Authoritative Name Servers | `jermaine.ns.cloudflare.com`<br>`diva.ns.cloudflare.com` |
+| Mail Exchange Records | Five Google Workspace mail exchange records were identified. |
+| TXT Records | Multiple TXT records were published, including SPF, domain verification, and service verification records. |
+| DMARC Policy | A DMARC policy was published with `p=reject`, indicating that messages failing DMARC authentication should be rejected. |
 
 ---
 
 ### Analysis
 
-The DNS records collected during this phase will be reviewed to identify how GitLab's primary domain supports publicly accessible services, including web hosting, authoritative DNS, and email delivery.
+The DNS analysis identified publicly available records supporting GitLab's primary domain, including address resolution, authoritative name servers, email routing, and email authentication policies.
 
-The authoritative name servers identified through DNS will be compared with those documented during the WHOIS analysis to validate consistency across multiple public data sources. Address records will identify how the primary domain resolves over IPv4 and IPv6, while MX, TXT, and DMARC records will provide additional context regarding publicly available email infrastructure and security-related DNS configuration.
+The `A` and `AAAA` record lookups confirmed that GitLab publishes both IPv4 and IPv6 address records for its primary domain, enabling systems using either protocol to resolve the domain. The authoritative name servers identified through the DNS queries were consistent with those observed during the WHOIS analysis performed in the previous phase, providing corroborating evidence across two independent public data sources.
 
-Observations documented during this phase will be limited to information directly supported by the collected DNS records.
+The MX records identified multiple Google Workspace mail exchange servers responsible for receiving email for the domain. Additionally, the published TXT records included SPF and numerous domain verification records associated with external services, demonstrating the use of DNS TXT records for email authentication and service ownership verification.
+
+The published DMARC record specifies a policy of `p=reject`, indicating that emails failing DMARC authentication should be rejected. This publicly available policy demonstrates the implementation of an email authentication control intended to reduce domain spoofing and phishing attempts.
 
 ---
 
 ### Analyst Assessment
 
-The DNS analysis establishes a technical baseline for GitLab's publicly observable infrastructure. Correlating DNS records with the WHOIS information collected during the previous phase increases confidence in the identified domain configuration and supporting infrastructure.
+The DNS analysis established a technical baseline for GitLab's publicly observable domain infrastructure by identifying address records, authoritative name servers, mail routing, and email authentication configuration.
 
-These findings provide the foundation for the next phase of the assessment, where certificate transparency logs and passive subdomain enumeration will be used to identify additional publicly observable GitLab assets.
+Correlating these DNS records with the WHOIS information collected during the previous phase increased confidence in the accuracy of the identified infrastructure and demonstrated consistency across multiple passive intelligence sources.
+
+The findings from this phase provide the foundation for the next stage of the assessment, where certificate transparency logs and passive subdomain enumeration will be used to identify additional publicly observable GitLab assets.
