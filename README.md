@@ -261,6 +261,8 @@ The following DNS queries identified the IPv4 (`A`) and IPv6 (`AAAA`) address re
 
 Identifying publicly advertised IP addresses establishes where the domain resolves on the Internet. These records provide a foundation for understanding the organization's external infrastructure and can later be correlated with certificate transparency logs and publicly indexed infrastructure identified through passive intelligence sources.
 
+---
+
 #### Figure 6 – Name Server and Mail Exchange Records
 
 The following DNS queries identified the authoritative name servers and mail exchange (MX) records associated with `gitlab.com`.
