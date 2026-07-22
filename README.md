@@ -439,4 +439,7 @@ While the presence of a subdomain does not indicate a vulnerability, publicly av
 
 Passive subdomain enumeration expanded the assessment beyond GitLab's primary domain by identifying numerous publicly observable assets supporting a variety of organizational services. The results provide a broader understanding of GitLab's external presence while remaining entirely passive and non-intrusive.
 
-These discovered hostnames establish a foundation for validating GitLab's publicly indexed infrastructure using Internet intelligence platforms during the next phase of the assessment.
+These discovered hostnames establish a foundation for validating GitLab's publicly indexed infrastructure using Internet intelligence platforms during the next phase of the assessment. 
+
+---
+
