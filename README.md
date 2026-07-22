@@ -137,10 +137,10 @@ A WHOIS lookup was performed against GitLab's primary domain (`gitlab.com`) usin
 
 ### Analysis
 
-The WHOIS lookup identified GitLab's primary domain as being registered through **Gandi SAS** and showed that the domain has been registered since **2004**, indicating a long-established domain presence. The record also identified two authoritative Cloudflare name servers, suggesting that GitLab relies on Cloudflare to provide DNS services for the domain.
+The WHOIS lookup identified GitLab's primary domain as being registered through **Gandi SAS** and showed that the domain has been registered since **2004**, indicating a long-established domain presence. The WHOIS record also identifies **Cloudflare authoritative name servers** associated with the domain, providing additional information about its publicly available DNS registration.
 
-The domain status is listed as **clientTransferProhibited**, which is a standard registration status used to help prevent unauthorized domain transfers. Additionally, the WHOIS record reports that DNSSEC is currently **unsigned**, which is recorded as part of the publicly available registration information.
+The domain status is listed as **clientTransferProhibited**, a standard registration status intended to help prevent unauthorized domain transfers. Additionally, the WHOIS record reports that **DNSSEC is currently unsigned**, which was documented as part of the publicly available registration information.
 
 ### Analyst Assessment
 
-The WHOIS record provides a verified source of publicly available registration information that confirms key details about GitLab's primary domain. These findings establish a foundation for the next stage of the assessment, where the domain's DNS configuration and associated infrastructure will be examined through additional passive OSINT techniques.
+The WHOIS record provides verified registration information that confirms key details about GitLab's primary domain. The identified registrar, registration timeline, domain status, and authoritative name servers establish a foundation for the next phase of the assessment, where GitLab's DNS configuration and infrastructure will be examined using additional passive OSINT techniques.
