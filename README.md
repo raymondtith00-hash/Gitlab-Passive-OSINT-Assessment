@@ -181,6 +181,12 @@ The WHOIS lookup identified publicly available registration information associat
 
 ---
 
+### Threat Perspective
+
+WHOIS information can help an attacker validate that a domain is legitimate and identify publicly available registration details such as the registrar, domain age, and authoritative name servers. While this information does not expose vulnerabilities, it can help an attacker distinguish legitimate organizational domains from lookalike or newly registered domains during the reconnaissance phase of an attack.
+
+--- 
+
 ### Analysis
 
 The WHOIS lookup confirmed publicly available registration information for GitLab's primary domain. The domain has been registered since **2004**, indicating a long-established public Internet presence. The registration is maintained through **Gandi SAS**, and the published domain status includes `clientTransferProhibited`, which helps protect against unauthorized domain transfers.
@@ -319,6 +325,12 @@ DMARC records describe how an organization requests that receiving mail servers 
 | Mail Exchange Records | Five Google Workspace mail exchange records were identified. |
 | TXT Records | Multiple TXT records were published, including SPF, domain verification, and service verification records. |
 | DMARC Policy | A DMARC policy was published with `p=reject`, indicating that messages failing DMARC authentication should be rejected. |
+
+---
+
+### Threat Perspective
+
+Public DNS records help map an organization's external infrastructure. Address records identify where a domain resolves, name server records identify the systems responsible for managing DNS, and mail-related records reveal publicly advertised email infrastructure. While these records are intended to be publicly accessible, they can assist attackers in understanding how an organization's services are exposed before conducting additional reconnaissance or attempting phishing, spoofing, or infrastructure-focused attacks.
 
 ---
 
