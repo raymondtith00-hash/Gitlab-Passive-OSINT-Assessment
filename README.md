@@ -443,3 +443,104 @@ These discovered hostnames establish a foundation for validating GitLab's public
 
 ---
 
+# Phase 6 – Public Infrastructure Validation
+
+## Assessment Question
+
+Can publicly indexed Internet intelligence platforms validate GitLab's publicly observable infrastructure and services identified during previous phases of the assessment?
+
+---
+
+## Why This Matters
+
+Internet intelligence platforms continuously collect publicly observable information about Internet-facing systems, including hostnames, IP addresses, SSL/TLS certificates, exposed services, HTTP responses, and software fingerprints. Reviewing this information allows analysts to independently validate previously identified assets and develop greater confidence in the accuracy of passive reconnaissance findings without directly interacting with the target's infrastructure.
+
+---
+
+## Collection Method
+
+Public infrastructure validation was performed using **Shodan** and **Censys**, two Internet intelligence platforms that continuously index publicly accessible Internet-facing systems.
+
+The following searches were performed:
+
+**Shodan**
+
+```
+hostname:gitlab.com
+```
+
+**Censys**
+
+```
+gitlab.com
+```
+
+Only publicly indexed information was reviewed during this phase. No authentication, vulnerability scanning, exploitation, or direct interaction with GitLab's infrastructure was performed.
+
+---
+
+## Evidence
+
+### Figure 10 – Shodan Public Infrastructure Results
+
+Shodan was used to review publicly indexed infrastructure associated with GitLab.
+
+![Shodan Public Infrastructure Results](screenshots/10-shodan-public-infrastructure.png)
+
+### Key Observations
+
+- Shodan returned multiple GitLab-associated Internet-facing hosts.
+- Indexed host information included IP addresses, SSL/TLS certificate details, HTTP response information, geographic location, and exposed services.
+- HTTPS (TCP port 443) was the most commonly observed publicly indexed service.
+
+---
+
+### Figure 11 – Censys Public Infrastructure Results
+
+Censys was used to review publicly indexed Internet-facing infrastructure associated with GitLab.
+
+![Censys Public Infrastructure Results](screenshots/11-censys-public-infrastructure.png)
+
+### Key Observations
+
+- Multiple GitLab-associated web properties were identified.
+- Indexed hosts included publicly accessible HTTPS services.
+- Public records included IP addresses, SSL/TLS certificate information, software identification, and HTTP endpoint metadata.
+- GitLab-related infrastructure aligned with assets identified during previous phases of the assessment.
+
+---
+
+## Findings
+
+| Observation | Result |
+|--------------|--------|
+| Validation Platforms | Shodan and Censys |
+| Public Infrastructure | Multiple GitLab-associated Internet-facing hosts identified |
+| Indexed Metadata | IP addresses, HTTPS services, SSL/TLS certificates, HTTP response information, and software fingerprints observed |
+| Intelligence Correlation | Infrastructure identified during WHOIS, DNS analysis, and passive subdomain enumeration was independently validated across multiple passive intelligence platforms |
+
+---
+
+## Analysis
+
+Shodan and Censys independently validated infrastructure previously identified throughout the assessment. Both platforms indexed GitLab-associated Internet-facing systems and provided additional context including IP addresses, SSL/TLS certificate information, HTTP responses, software fingerprints, and publicly accessible services.
+
+Rather than identifying entirely new infrastructure, this phase confirmed that GitLab's publicly observable assets are consistently represented across multiple independent intelligence platforms. Correlating these findings reduced reliance on any single data source and increased confidence in the overall assessment.
+
+---
+
+## Attacker Perspective
+
+Internet intelligence platforms significantly reduce the effort required during the reconnaissance phase of an attack. Rather than manually identifying Internet-facing systems, an attacker can leverage platforms such as Shodan and Censys to quickly discover publicly indexed hosts, associated IP addresses, SSL/TLS certificates, software fingerprints, and exposed services.
+
+For example, identifying publicly accessible HTTPS services, software technologies such as Nginx, or certificate metadata helps an attacker build a profile of an organization's external environment before conducting additional passive reconnaissance. While this information does not indicate the presence of vulnerabilities, it allows attackers to prioritize systems for further investigation and better understand an organization's publicly exposed infrastructure.
+
+From a defensive perspective, organizations should regularly review how their infrastructure appears in Internet intelligence platforms to verify publicly exposed assets, identify unexpected systems, and maintain an accurate inventory of Internet-facing services.
+
+---
+
+## Analyst Assessment
+
+Public infrastructure validation confirmed that GitLab's externally visible infrastructure is consistently represented across multiple independent passive intelligence platforms. Correlating Shodan and Censys with findings from WHOIS, DNS analysis, and passive subdomain enumeration strengthened confidence in the overall assessment and demonstrated the importance of validating intelligence through multiple publicly available sources.
+
+This phase concludes the technical portion of the passive open-source intelligence assessment and establishes a comprehensive understanding of GitLab's publicly observable Internet presence.
