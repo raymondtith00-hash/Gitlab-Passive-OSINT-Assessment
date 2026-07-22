@@ -107,8 +107,6 @@ GitLab maintains a comprehensive public-facing website that intentionally provid
 ---
 # Phase 3 – Domain Registration Analysis
 
-# Phase 3 – Domain Registration Analysis
-
 ### Assessment Question
 
 What publicly available domain registration information can be identified for GitLab's primary domain?
@@ -136,6 +134,45 @@ Only publicly available registration information was collected. No authenticatio
 ---
 
 ### Evidence
+
+#### Figure 4 – WHOIS Results for `gitlab.com`
+
+The WHOIS lookup identified publicly available registration information associated with GitLab's primary domain.
+
+![WHOIS Results](screenshots/04-gitlab-whois-results.png)
+
+---
+
+### Findings
+
+| Observation | Result |
+|--------------|--------|
+| Domain Name | `gitlab.com` |
+| Registrar | `Gandi SAS` |
+| Creation Date | January 15, 2004 |
+| Last Updated | December 11, 2025 |
+| Registry Expiration Date | January 15, 2027 |
+| Domain Status | `clientTransferProhibited` |
+| Authoritative Name Servers | `diva.ns.cloudflare.com`<br>`jermaine.ns.cloudflare.com` |
+| DNSSEC | Unsigned |
+
+---
+
+### Analysis
+
+The WHOIS lookup confirmed publicly available registration information for GitLab's primary domain. The domain has been registered since **2004**, indicating a long-established public Internet presence. The registration is maintained through **Gandi SAS**, and the published domain status includes `clientTransferProhibited`, which helps protect against unauthorized domain transfers.
+
+The WHOIS record also identified two authoritative name servers associated with the domain. These observations establish an initial understanding of GitLab's publicly available DNS infrastructure before performing direct DNS record analysis.
+
+Additionally, the WHOIS record reports that DNSSEC is currently unsigned. This observation is documented as part of the publicly available registration information without drawing conclusions about the organization's security posture.
+
+---
+
+### Analyst Assessment
+
+The WHOIS analysis established a verified registration baseline for GitLab's primary domain by identifying the registrar, registration history, domain status, and authoritative name servers.
+
+These findings provide a foundation for the next phase of the assessment, where publicly available DNS records will be examined to validate the identified name servers and further analyze GitLab's external domain infrastructure.
 
 #### Figure 4 – WHOIS Results for `gitlab.com`
 
@@ -280,3 +317,4 @@ The DNS analysis established a technical baseline for GitLab's publicly observab
 Correlating these DNS records with the WHOIS information collected during the previous phase increased confidence in the accuracy of the identified infrastructure and demonstrated consistency across multiple passive intelligence sources.
 
 The findings from this phase provide the foundation for the next stage of the assessment, where certificate transparency logs and passive subdomain enumeration will be used to identify additional publicly observable GitLab assets.
+
