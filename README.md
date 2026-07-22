@@ -53,21 +53,23 @@ The objective of this assessment is to identify publicly available information a
 Before collecting intelligence, the target organization must first be verified to ensure that all information gathered throughout the investigation can be accurately attributed to GitLab.
 
 --- 
-## Phase 2 – Target Identification
+# Phase 2 – Target Identification
 
-### Assessment Question 
+### Assessment Question
 
-How can GitLab's official digital presence be verified before collecting technical intelligence?
+How can GitLab's official online presence be verified before collecting technical intelligence?
 
 ### Why This Matters
 
-Before collecting technical intelligence, it is important to verify the target organization and its official digital properties. Establishing this baseline helps ensure that all information gathered throughout the investigation is accurately attributed to GitLab and reduces the risk of analyzing unrelated or impersonating assets.
+Before collecting information about an organization, it is important to verify that the investigation is focused on official company resources. Establishing a trusted starting point reduces the risk of gathering information from unofficial or fraudulent sources and provides a reliable foundation for the remainder of the assessment.
 
 ### Collection Method
 
-The investigation began by reviewing GitLab's official website to identify the organization's primary services, official domains, and publicly available resources. Information collected during this phase will serve as the baseline for subsequent OSINT collection.
+The official GitLab website was reviewed using a web browser in Kali Linux. The organization's publicly available homepage was examined to verify its identity and understand the primary service it provides.
 
 ### Evidence
+
+**Figure 1 – GitLab Official Website**
 
 ![GitLab Official Website](screenshots/01-gitlab-official-website.png)
 
@@ -76,20 +78,14 @@ The investigation began by reviewing GitLab's official website to identify the o
 | Observation | Result |
 |--------------|--------|
 | Organization | GitLab |
-| Official Company Website | about.gitlab.com |
-| Primary Platform | gitlab.com |
+| Official Website | `about.gitlab.com` |
+| Primary Product | GitLab Platform |
 | Primary Service | DevSecOps Platform |
-| Official Documentation | docs.gitlab.com |
-| Official Security Resources | about.gitlab.com/security/ |
 
 ### Analysis
 
-The official GitLab website confirmed the organization's identity and established trusted digital properties for the remainder of the assessment. Future findings, including WHOIS records, DNS information, certificate transparency logs, and infrastructure data, will be compared against these confirmed assets before being attributed to GitLab.
-
-Establishing verified organizational assets is a fundamental step in OSINT investigations because it reduces attribution errors and provides a reliable foundation for intelligence collection.
+The official GitLab website confirms the organization's identity and establishes `about.gitlab.com` as an official company resource. The homepage identifies GitLab as a DevSecOps platform and provides a trusted starting point for collecting additional publicly available information throughout the assessment.
 
 ### Analyst Assessment
 
-Threat actors often begin reconnaissance by identifying an organization's official domains, products, documentation, and public services. This information helps attackers understand the target environment and may assist with phishing, social engineering, or infrastructure mapping.
-
-Defenders can use the same publicly available information to validate their external asset inventory and identify unauthorized domains or services that could be used for impersonation.
+The official company website serves as the foundation for the remainder of the investigation. Verifying GitLab's official online presence ensures that future findings—including domain registration records, DNS information, certificate transparency logs, and other publicly available intelligence—can be confidently attributed to the correct organization.
