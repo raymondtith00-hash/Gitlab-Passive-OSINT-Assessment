@@ -179,6 +179,13 @@ The official GitLab website (`about.gitlab.com`) was reviewed using Firefox on h
 
 Before collecting technical information about an organization, it is important to verify that the investigation is focused on official resources. Reviewing an organization's public website establishes a trusted starting point, confirms the target's identity, and identifies information the organization intentionally makes available to the public. This provides context for the remainder of the assessment and reduces the risk of relying on unofficial or inaccurate sources.
 
+---
+
+## Attacker Perspective
+
+Official organizational websites often serve as the first stage of reconnaissance because they provide verified information about a company's structure, leadership, products, services, and publicly available resources. This information helps attackers develop contextual awareness before expanding into technical reconnaissance such as DNS analysis, infrastructure discovery, and Internet intelligence collection.
+
+Although this information is intentionally published, it contributes to an organization's publicly observable footprint and can assist in building a more complete profile of the target.
 
 ---
 
