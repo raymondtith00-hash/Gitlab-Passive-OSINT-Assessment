@@ -356,3 +356,87 @@ Correlating these DNS records with the WHOIS information collected during the pr
 
 The findings from this phase provide the foundation for the next stage of the assessment, where certificate transparency logs and passive subdomain enumeration will be used to identify additional publicly observable GitLab assets.
 
+--- 
+
+# Phase 5 – Passive Subdomain Enumeration
+
+## Assessment Question
+
+What publicly available subdomains associated with GitLab can be identified through passive subdomain enumeration?
+
+---
+
+## Why This Matters
+
+Subdomains often represent additional Internet-facing services that extend beyond an organization's primary website. Identifying these publicly accessible hostnames helps analysts develop a more complete understanding of an organization's external attack surface without directly interacting with its infrastructure.
+
+Passive subdomain enumeration relies exclusively on publicly available information sources, making it suitable for reconnaissance activities while avoiding active scanning or direct engagement with the target environment.
+
+---
+
+## Collection Method
+
+Passive subdomain enumeration was performed using **Subfinder**, an open-source passive reconnaissance tool that aggregates publicly available intelligence from multiple sources to identify subdomains associated with a target domain.
+
+The following command was used:
+
+```bash
+subfinder -d gitlab.com
+```
+
+Only passive intelligence sources were queried during this phase. No DNS brute forcing, authentication attempts, vulnerability scanning, exploitation, or direct interaction with GitLab's infrastructure was performed.
+
+---
+
+## Evidence
+
+### Figure 9 – Passive Subdomain Enumeration Results
+
+Passive subdomain enumeration was performed using **Subfinder** to identify publicly available subdomains associated with GitLab.
+
+![Passive Subdomain Enumeration](screenshots/09-subfinder-passive-subdomain-enumeration.png)
+
+### Key Observations
+
+- Numerous GitLab-associated subdomains were identified.
+- Hostnames supporting documentation, APIs, monitoring, package registries, analytics, and operational services were observed.
+- Development and staging environments were also publicly discoverable through passive enumeration.
+
+### Why This Evidence Matters
+
+Publicly available subdomains expand an analyst's understanding of an organization's externally visible infrastructure. Identifying these assets helps establish a more complete inventory of Internet-facing services that can later be validated using independent passive intelligence sources.
+
+---
+
+## Findings
+
+| Observation | Result |
+|--------------|--------|
+| Enumeration Method | Subfinder (Passive Mode) |
+| Public Subdomains | Numerous GitLab-associated subdomains identified |
+| Infrastructure Categories | Documentation, APIs, monitoring, registries, analytics, development, and staging services observed |
+| Public Asset Discovery | Additional Internet-facing services identified beyond the primary domain |
+
+---
+
+## Analysis
+
+Passive subdomain enumeration identified numerous publicly accessible hostnames associated with GitLab that were not immediately visible from the organization's primary website. The discovered subdomains represented a variety of organizational services, including documentation platforms, APIs, package registries, monitoring infrastructure, analytics services, and development environments.
+
+Rather than indicating security weaknesses, these findings demonstrate how passive intelligence sources can reveal the breadth of an organization's externally visible infrastructure. Developing an inventory of these publicly observable assets provides a stronger foundation for validating Internet-facing services during the next phase of the assessment.
+
+---
+
+## Threat Perspective
+
+Publicly discoverable subdomains can provide valuable reconnaissance information for attackers. Additional hostnames may reveal Internet-facing services, development environments, monitoring platforms, or specialized applications that are not immediately visible from an organization's primary website.
+
+While the presence of a subdomain does not indicate a vulnerability, publicly available asset information contributes to an organization's observable attack surface and may assist attackers in prioritizing systems for further passive reconnaissance.
+
+---
+
+## Analyst Assessment
+
+Passive subdomain enumeration expanded the assessment beyond GitLab's primary domain by identifying numerous publicly observable assets supporting a variety of organizational services. The results provide a broader understanding of GitLab's external presence while remaining entirely passive and non-intrusive.
+
+These discovered hostnames establish a foundation for validating GitLab's publicly indexed infrastructure using Internet intelligence platforms during the next phase of the assessment.
