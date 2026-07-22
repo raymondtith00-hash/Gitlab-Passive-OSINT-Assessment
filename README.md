@@ -166,8 +166,6 @@ The WHOIS record also identified two authoritative name servers associated with 
 
 Additionally, the WHOIS record reports that DNSSEC is currently unsigned. This observation is documented as part of the publicly available registration information without drawing conclusions about the organization's security posture.
 
----
-
 ### Analyst Assessment
 
 The WHOIS analysis established a verified registration baseline for GitLab's primary domain by identifying the registrar, registration history, domain status, and authoritative name servers.
