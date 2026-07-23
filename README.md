@@ -647,14 +647,6 @@ Throughout the assessment, findings were validated across multiple independent p
 
 ---
 
-## Assessment Limitations
-
-This assessment was intentionally limited to passive reconnaissance techniques using publicly available information. No active scanning, authentication attempts, exploitation, vulnerability testing, social engineering, or interaction with GitLab's infrastructure was performed.
-
-As a result, this assessment cannot determine whether identified assets contain vulnerabilities, whether every publicly accessible asset was discovered, or whether all indexed information accurately reflects GitLab's current operational environment. Public intelligence platforms may also contain outdated or incomplete information depending on when the data was collected.
-
----
-
 ## Overall Analyst Assessment
 
 This assessment successfully established a comprehensive baseline of GitLab's publicly observable Internet presence through the correlation of multiple independent passive intelligence sources. Information collected during organizational research, WHOIS analysis, DNS enumeration, passive subdomain discovery, and public infrastructure validation consistently supported one another, increasing confidence in the overall findings.
